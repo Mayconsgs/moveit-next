@@ -11,7 +11,6 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="shortcut icon" href="favicon.png" type="image/png" />
-          <meta http-equiv="X-UA-Compatible" content="IE=7" />
         </Head>
         <body>
           <Main />
