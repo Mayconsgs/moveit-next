@@ -64,6 +64,22 @@
   &:disabled {
     background-color: var(--white);
     color: var(--text);
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 4px;
+      width: 100%;
+      background-color: var(--green);
+      position: absolute;
+      bottom: 0;
+
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  > img {
+    margin-left: 0.5rem;
   }
 }
 
