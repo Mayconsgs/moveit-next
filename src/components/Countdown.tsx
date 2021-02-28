@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { FiPlay, FiX } from "react-icons/fi";
 import { CountdownContext } from "../contexts/CountdownContext";
 import styles from "../styles/components/Countdown.module.scss";
 
@@ -10,6 +11,7 @@ const Countdown = () => {
     isActive,
     startCountdown,
     resetCountdown,
+    percentToEndCicle,
   } = useContext(CountdownContext);
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
@@ -43,7 +45,11 @@ const Countdown = () => {
               onClick={resetCountdown}
             >
               Abandonar ciclo
-              <img src="icons/close_white.svg" alt="Close" />
+              <FiX />
+              <div
+                className={styles.bar}
+                style={{ width: `${percentToEndCicle}%` }}
+              />
             </button>
           ) : (
             <button
@@ -51,8 +57,8 @@ const Countdown = () => {
               className={styles.countdownButton}
               onClick={startCountdown}
             >
-              Iniciar um ciclo
-              <img src="icons/play_arrow.svg" alt="Play" />
+              Iniciar um Ciclo
+              <FiPlay fill="var(--white)" />
             </button>
           )}
         </>

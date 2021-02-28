@@ -56,6 +56,7 @@
   font-weight: 600;
 
   transition: background-color 0.2s;
+  line-height: 0;
 
   &:not(:disabled):hover {
     background-color: var(--blue-dark);
@@ -78,8 +79,10 @@
     }
   }
 
-  > img {
+  > svg,
+  img {
     margin-left: 0.5rem;
+    color: inherit;
   }
 }
 
@@ -87,8 +90,44 @@
   background-color: var(--white);
   color: var(--title);
 
+  position: relative;
+
   &:not(:disabled):hover {
     background-color: var(--red);
     color: var(--white);
+
+    &::before {
+      opacity: 0;
+    }
+
+    .bar {
+      opacity: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    left: 0;
+
+    transition: opacity 0.2s;
+
+    background-color: var(--gray-line);
+    border-radius: 0 0 5px 5px;
+  }
+
+  .bar {
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    left: 0;
+    transition: opacity 0.2s, width 1s linear;
+
+    background-color: var(--green);
+    border-radius: 0 0 5px 5px;
   }
 }

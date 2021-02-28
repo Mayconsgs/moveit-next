@@ -5,6 +5,7 @@ import CompletedChalenges from "../components/CompletedChalenges";
 import Countdown from "../components/Countdown";
 import ExperienceBar from "../components/ExperienceBar";
 import Profile from "../components/Profile";
+import SideBar from "../components/SideBar";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import styles from "../styles/pages/Home.module.scss";
@@ -15,13 +16,14 @@ interface HomeProps {
   challengesCompleted: number;
 }
 
-export default function Home(props) {
+export default function Home(props: HomeProps) {
   return (
     <ChallengesProvider
       level={props.level}
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
+      <SideBar />
       <div className={styles.container}>
         <Head>
           <title>Inicio | move.it</title>

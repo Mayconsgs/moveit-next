@@ -12,6 +12,7 @@ interface CountdownContextData {
   seconds: number;
   hasFinish: boolean;
   isActive: boolean;
+  percentToEndCicle: number;
 
   startCountdown: () => void;
   resetCountdown: () => void;
@@ -31,11 +32,15 @@ const CountdownProvider = ({ children }: CountdownProviderProps) => {
   const [time, setTime] = useState(25 * 60);
   const [isActive, setIsActive] = useState(false);
   const [hasFinish, setHasFinish] = useState(false);
+  const [percentToEndCicle, setPercentToEndCicle] = useState(100);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
   function startCountdown() {
+    const percent = (time * 100) / (25 * 60);
+    setPercentToEndCicle(percent);
+
     setIsActive(true);
   }
 
@@ -56,6 +61,9 @@ const CountdownProvider = ({ children }: CountdownProviderProps) => {
       setIsActive(false);
       startNewChallenge();
     }
+
+    const percent = ((time - 1) * 100) / (25 * 60);
+    setPercentToEndCicle(percent);
   }, [isActive, time]);
 
   return (
@@ -65,6 +73,7 @@ const CountdownProvider = ({ children }: CountdownProviderProps) => {
         seconds,
         hasFinish,
         isActive,
+        percentToEndCicle,
 
         startCountdown,
         resetCountdown,

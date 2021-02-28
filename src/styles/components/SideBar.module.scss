@@ -1,0 +1,47 @@
+.sideBarContainer {
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  width: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+
+  > img {
+    margin: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  > nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    > a {
+      margin: 0.5rem 0;
+      width: 100%;
+      font-size: 0;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 3.5rem;
+      color: var(--blue);
+
+      &::before {
+        content: "";
+        background-color: var(--blue);
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        position: absolute;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+  }
+}
