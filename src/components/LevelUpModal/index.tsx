@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ChallengeContext } from "../contexts/ChallengesContext";
-import styles from "../styles/components/LevelUpModal.module.scss";
+import { ChallengeContext } from "../../contexts/ChallengesContext";
+import styles from "./style.module.scss";
 
 export const LevelUpModal = () => {
   const { level, closeLevelUpModal } = useContext(ChallengeContext);

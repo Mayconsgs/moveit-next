@@ -12,6 +12,10 @@
   justify-content: center;
   text-align: center;
 
+  @media (prefers-color-scheme: dark) {
+    box-shadow: none;
+  }
+
   .challengeNotActive {
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FiPlay, FiX } from "react-icons/fi";
-import { CountdownContext } from "../contexts/CountdownContext";
-import styles from "../styles/components/Countdown.module.scss";
+import { CountdownContext } from "../../contexts/CountdownContext";
+import styles from "./style.module.scss";
 
 const Countdown = () => {
   const {

@@ -17,15 +17,17 @@
 
     h1 {
       font-size: 2.4rem;
-      color: var(--white);
+      color: white;
       margin-bottom: 2.5rem;
     }
 
     > div {
       display: flex;
       align-items: center;
+
       img {
         height: 2.5rem;
+        width: 2.5rem;
       }
 
       p {
@@ -43,12 +45,8 @@
       input {
         padding: 0 2rem;
         font-size: 1.5rem;
-        color: var(--white);
-        background: linear-gradient(
-          to left,
-          rgba(73, 83, 184, 0.2),
-          var(--blue-dark)
-        );
+        color: white;
+        background: linear-gradient(to left, rgba(73, 83, 184, 0.2), #4953b8);
         display: flex;
         flex: 1;
         width: 100%;
@@ -80,8 +78,8 @@
         width: 5rem;
         border-radius: 0 5px 5px 0;
         transition: background-color 0.2s;
-        color: var(--white);
-        background-color: var(--blue-dark);
+        color: white;
+        background-color: #4953b8;
       }
     }
   }

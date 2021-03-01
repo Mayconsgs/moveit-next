@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FiAward, FiHome } from "react-icons/fi";
-import styles from "../styles/components/SideBar.module.scss";
+import styles from "./style.module.scss";
 
 const SideBar = () => {
   const router = useRouter();
@@ -10,12 +10,8 @@ const SideBar = () => {
     <header className={styles.sideBarContainer}>
       <img src="icons/Logo.svg" alt="" />
       <nav>
-        <Link href="/home">
-          <a
-            className={
-              router.route == "/home" ? styles.currentRoute : undefined
-            }
-          >
+        <Link href="/">
+          <a className={router.route == "/" ? styles.currentRoute : undefined}>
             <FiHome size="2rem" />
           </a>
         </Link>

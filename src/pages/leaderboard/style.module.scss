@@ -1,0 +1,40 @@
+.leaderboardContainer {
+  min-height: 100vh;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: var(--title);
+    font-size: 2.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 8fr 3fr 3fr;
+
+    > :first-child + * {
+      margin-left: 5px;
+    }
+
+    &.gridTitle {
+      > span {
+        color: var(--text);
+        text-transform: uppercase;
+        font-weight: 600;
+
+        font-size: 0.8rem;
+
+        &:first-child + span {
+          padding-left: 1rem;
+        }
+      }
+
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -5,6 +5,11 @@
   font-weight: 600;
   color: var(--title);
 
+  @media (prefers-color-scheme: dark) {
+    text-shadow: 0 0 10px var(--title), 0 0 20px var(--title),
+      0 0 40px var(--title);
+  }
+
   > div {
     flex: 1;
     display: flex;
@@ -17,16 +22,28 @@
     font-size: 8.5rem;
     text-align: center;
 
+    @media (prefers-color-scheme: dark) {
+      box-shadow: none;
+    }
+
     > span {
       flex: 1;
     }
 
     > span:first-child {
       border-right: 1px solid #f0f1f3;
+
+      @media (prefers-color-scheme: dark) {
+        border-right: 1px solid #121212;
+      }
     }
 
     > span:last-child {
       border-left: 1px solid #f0f1f3;
+
+      @media (prefers-color-scheme: dark) {
+        border-left: 1px solid #121212;
+      }
     }
   }
 
